@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Root.Code Studio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT */
+.left {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 60px;
+  background: linear-gradient(90deg, #ffffff, #d6b46d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.about {
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.section-title {
+  margin-top: 40px;
+  font-size: 26px;
+}
+
+.skills {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.skill-box {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background: #151515;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.skill-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(255,200,120,0.4);
+}
+
+/* IMAGE */
+.right img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255,180,100,0.4);
+}
+
+/* TOGGLE BUTTON */
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  background: #151515;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* LIGHT MODE */
+.light {
+  background: #f5f5f5;
+  color: #111;
+}
+
+.light .skill-box {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* DISCORD */
+.discord-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(20,20,20,0.7);
+  border: 1px solid #333;
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.discord-box:hover {
+  color: white;
+  border-color: #5865F2;
+  box-shadow: 0 0 15px rgba(88,101,242,0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right img {
+    margin-top: 30px;
+    width: 250px;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOGGLE -->
+<button id="themeToggle" class="theme-btn">☀️</button>
+
+<div class="container">
+
+  <div class="left">
+    <h1>Root.Code Studio</h1>
+    <div class="subtitle">Cardanes</div>
+
+    <div class="about">
+      Ben Safa, 19 yaşındayım. Oyun oynamayı severim ve 
+      GTA San Andreas & GTA 5 platformlarında map tasarımı yapıyorum.
+    </div>
+
+    <div class="section-title">Neler ile Uğraşıyorum?</div>
+
+    <div class="skills">
+      <div class="skill-box">Map</div>
+      <div class="skill-box">Animasyon</div>
+      <div class="skill-box">Web Tasarımı</div>
+    </div>
+  </div>
+
+  <div class="right">
+    <img src="https://i.hizliresim.com/jfzoaub.jpeg" alt="Şövalye">
+  </div>
+
+</div>
+
+<!-- DISCORD -->
+<a href="https://discord.gg/YpJp43Xy" 
+   target="_blank" 
+   class="discord-box">
+   🎮 Discord Sunucumuz
+</a>
+
+<script>
+const btn = document.getElementById("themeToggle");
+
+btn.addEventListener("click", function() {
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    btn.textContent = "🌙";
+  } else {
+    btn.textContent = "☀️";
+  }
+});
+</script>
+
+</body>
+</html>
